@@ -1,0 +1,161 @@
+body{
+
+    font-family: 'roboto';
+    font-weight: 400;
+}
+
+#reservation-form{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    background-color: rgb(246, 183, 67);
+    color: rgb(62, 42, 3);
+    margin: auto;
+    width: 400px;
+    align-items: center;
+    justify-items: left;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: left;
+    h2{
+        text-align: center;
+        text-decoration: underline;
+        margin: 20px;
+    }
+    label{
+        align-items: left;
+        font-size: 20px;
+    }
+    select, input{
+        color:rgb(91, 83, 68);
+        background-color: white;
+        border: none;
+        margin-bottom:20px;
+        padding: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        min-height: 30px;
+        min-width: 300px;
+    }
+
+    button{
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        background-color: rgb(255, 255, 255);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        color:rgb(188, 149, 78);
+        max-width: 100px;
+        margin: 20px;
+    }
+
+    button:hover{
+        color:rgb(217, 172, 89);}
+    
+
+}
+
+
+.tamodachi{
+    position: relative;}
+
+
+
+.reserv{
+    padding: 20px;
+    background-color: rgb(124, 94, 38);
+
+    z-index: 2;
+    h1{
+        font-family: 'breh';
+        font-size: 40px;
+        color: white;
+        text-decoration: underline;
+        
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+}
+
+.header-section{
+    color: white;
+    background-color: rgb(58, 44, 19);
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    h3{
+        vertical-align:middle;
+        font-size: 30px;
+        margin: 0;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-top: 15px;
+    }
+
+    img{
+        vertical-align: middle;
+        width: 50px;
+    }
+}
+
+#logout{
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        background-color: rgb(255, 255, 255);
+        padding: 10px 30px;
+        border: none;
+        border-radius: 25px;
+        color:rgb(91, 83, 68);
+        max-width: 100px;
+        font-family: 'breh';
+        font-size: 20px;
+  
+   
+    top: 10px;
+    right: 10px;
+    position: absolute;
+  }
+  
+  #logout:hover{
+    color:rgb(61, 56, 46);
+  }
+
+  .pretzel{
+    z-index: 1;
+    background-color: rgb(164, 129, 68);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+    padding: 30px;
+
+    h2{
+        font-family: 'breh';
+        font-size: 40px;
+        text-decoration: underline;
+        margin-bottom: 10px;
+        color: white;
+    }
+
+  }
+
+  th, td {
+    
+    background-color: white;
+    font-size: 30px;
+    border: 1px dotted #000; /* Black border around each cell */
+    padding: 10px;
+    text-align: left;
+}
+
+#table{
+    
+    width: 500px;
+}

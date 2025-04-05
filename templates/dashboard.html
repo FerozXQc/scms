@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Diddy's Stadium: Home</title>
+    <link rel="stylesheet" href="/static/css/general.css" />
+    <link rel="stylesheet" href="/static/css/header.css" />
+    <link rel="stylesheet" href="/static/css/dashboard.css" />
+    
+  </head>
+  <body>
+    <header>
+      <div class="ippo">
+        <img src="/static/photos/Diddy.png" alt="logo" />
+      </div>
+      <ul class="tamodachi">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/#aboutus">About Us</a></li>
+        <li><a href="/#services">services</a></li>
+       
+        <button id="logout">Logout</button>
+      </ul>
+    </header>
+
+    <div class="header-section"> <img src="/static/photos/pepe.gif" alt="pepe"> <h3>Welcome to the Dashboard, {{username}}!</h3>
+    <img src="/static/photos/pepe.gif" alt="pepe"></div>
+   
+
+  
+    <div class="reserv">
+      <h1>Add a New Reservation</h1>
+      <form id="reservation-form">
+      <h2>Reservation Form</h2>
+      
+        <label for="sport">Sport:</label>
+        <select id="sport" required>
+          <option value="" disabled selected>Select a sport</option>
+          {% for sport in sports %}
+          <option value="{{ sport }}">{{ sport }}</option>
+          {% endfor %}
+        </select>
+
+  
+        <label for="time_slot">Time Slot:</label>
+        <select id="time_slot" required>
+          <option value="" disabled selected>Select a time slot</option>
+          {% for time_slot in time_slots %}
+          <option value="{{ time_slot }}">{{ time_slot }}</option>
+          {% endfor %}
+        </select>
+   
+    
+        <label for="date">Date:</label>
+        <input type="date" id="date" required />
+
+      <div id="vent"></div>
+      <button type="submit">Reserve</button>
+    </form></div>
+    <div class="pretzel">
+      <h2>Your Reservations</h2>
+      <table id="table">
+        <thead>
+          <tr>
+            <th>Sport</th>
+            <!-- Changed to show Sport -->
+            <th>Time Slot</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for reservation in user_reservations %}
+          <tr>
+            <td>{{ reservation[2] }}</td>
+            <!-- Assuming reservation[1] contains the sport -->
+            <td>{{ reservation[3] }}</td>
+            <!-- Assuming reservation[2] contains the time slot -->
+            <td>{{ reservation[4] }}</td>
+            <!-- Assuming reservation[3] contains the date -->
+          </tr>
+          {% endfor %} {% if user_reservations|length == 0 %}
+          <tr>
+            <td colspan="3">You have no reservations.</td>
+          </tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  
+
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const vent = document.getElementById("vent");
+        const logoutButton = document.getElementById("logout");
+
+        // Handle reservation form submission
+        document
+          .getElementById("reservation-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const sport = document.getElementById("sport").value;
+            const time_slot = document.getElementById("time_slot").value;
+            const date = document.getElementById("date").value;
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "/dashboard", true);
+            xhr.setRequestHeader("Content-type", "application/json");
+
+            xhr.onload = function () {
+              if (xhr.status == 201) {
+                vent.textContent = "Reservation made successfully!";
+                location.reload(); // Refresh the page to show updated reservations
+              } else {
+                const response = JSON.parse(this.responseText);
+                vent.textContent =  response.message;
+              }
+            };
+
+            xhr.onerror = function () {
+              vent.textContent = "Error: " + xhr.statusText; // Display error status
+            };
+
+            xhr.send(JSON.stringify({ sport, time_slot, date })); // Send reservation data
+          });
+
+        // Logout functionality
+        logoutButton.onclick = function () {
+          const xhr = new XMLHttpRequest();
+          xhr.open("POST", "/logout", true);
+          xhr.onload = function () {
+            if (xhr.status == 200) {
+              vent.textContent =
+                "Successfully logged out. Redirecting to home...";
+              setTimeout(() => {
+                window.location.href = "/"; // Change this to your home page URL
+              }, 2000); // Redirect after 2 seconds
+            }
+          };
+
+          xhr.send(); // Send logout request
+        };
+      });
+    </script>
+  </body>
+</html>

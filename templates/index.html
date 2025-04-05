@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Diddy's Stadium: Home</title>
+    <link rel="stylesheet" href="/static/css/general.css" />
+    <link rel="stylesheet" href="/static/css/header.css" />
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <link rel="stylesheet" href="/static/css/modal.css" />
+  </head>
+  <body>
+    <header>
+      <div class="ippo">
+        <img src="/static/photos/Diddy.png" alt="logo" />
+      </div>
+      <ul class="tamodachi">
+        <li><a href="">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/#aboutus">About Us</a></li>
+        <li><a href="/#services">Services</a></li>
+
+        <button
+          id="logout"
+          style="display: {{ 'none' if not logged_in else 'inline' }};"
+        >
+          Logout
+        </button>
+      </ul>
+    </header>
+    <main>
+      <div class="levi">
+        <div class="levi-background"></div>
+        <div class="levi-text">
+          <h3>From Kickoff to Overtime, Diddy's Turf Has You Covered.</h3>
+          <div class="levi-buttons">
+            <a href="/#aboutus"><button>know more</button></a>
+            <button
+              id="trigger"
+              style="display: {{ 'inline' if not logged_in else 'none' }};"
+            >
+              Log In
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="overlay" id="overlay"></div>
+      <div class="modal" id="loginModal">
+        <div class="modal-content">
+          <span class="close" id="closeModal">&times;</span>
+          <h2>Log In/Register</h2>
+          <form id="form" method="post">
+            <div class="boxy1">
+              <label for="user">Username</label>
+              <input type="text" id="user" name="user" required />
+            </div>
+            <div class="boxy2">
+              <label for="passwd">Password</label>
+              <input type="password" id="passwd" name="passwd" required />
+            </div>
+            <div id="vent"></div>
+            <div class="modal-btns"> <input id="hulu" type="submit" value="Login" />
+              <input id="gulu" type="submit" value="Register" /></div>
+           
+          </form>
+        </div>
+      </div>
+      <div id="aboutus">
+        <h3>About Us</h3>
+        <p>
+          Welcome to Diddy’s Turf, the premier sports complex that has quickly
+          become a hub for athletes and sports enthusiasts since our opening in
+          2024. Owned by the legendary P. Diddy, we pride ourselves on offering
+          a vibrant and energetic environment where everyone can come together
+          to celebrate their love for sports. Whether you’re a football fanatic,
+          a cricket aficionado, a tennis enthusiast, or a basketball lover, our
+          state-of-the-art facilities are designed to cater to all your sporting
+          needs. We understand that sports are not just about competition; they
+          are about community, passion, and having a great time, which is why we
+          strive to create an inclusive space for everyone, regardless of their
+          skill level.
+        </p>
+        <p>
+          At Diddy’s Turf, we believe that playing sports should be an enjoyable
+          and enriching experience for everyone involved. Our complex features a
+          range of modern facilities that are perfect for individuals and teams
+          alike. From well-maintained pitches and courts to specialized training
+          areas, we offer everything you need to hone your skills and take your
+          game to the next level. We host various leagues, tournaments, and
+          friendly matches throughout the year, giving players ample
+          opportunities to compete and improve. Additionally, our dedicated
+          coaching staff is always on hand to provide guidance, whether you're
+          just starting out or looking to refine your technique. We aim to
+          foster a love for sports and physical activity that lasts a lifetime.
+        </p>
+        <p>
+          But Diddy’s Turf is more than just a place to play; it’s a thriving
+          community where friendships are formed and memories are made. We are
+          passionate about building connections among our members and creating
+          an atmosphere that is welcoming and supportive. Our events and
+          activities encourage social interaction and camaraderie, allowing
+          athletes to share their experiences and cheer each other on. At
+          Diddy’s Turf, you’ll not only improve your game but also become part
+          of a family that shares your enthusiasm for sports. So come join us,
+          bring your friends, and experience the excitement of being part of
+          Diddy’s Turf—where every game is a chance to create unforgettable
+          moments!
+        </p>
+      </div>
+      <div id="services">
+        <h3>Services</h3>
+        <p>
+          At Diddy’s Turf, we pride ourselves on providing a top-tier sports
+          experience with facilities tailored for both seasoned athletes and
+          those just beginning their fitness journey. Our complex features four
+          main sports: football, cricket, tennis, and basketball, each with its
+          own expertly maintained field or court. Whether you’re a casual player
+          or a competitive spirit, our football field offers a perfectly
+          manicured pitch, ideal for practice games or full matches. Our cricket
+          pitch is designed to meet professional standards, ensuring every game
+          feels intense and authentic. For those with a knack for precision, our
+          tennis courts are impeccably kept, allowing players to focus on their
+          skills without distractions. Basketball enthusiasts will find our
+          indoor court offers a smooth surface with ample room for full-court
+          games, providing the perfect environment to hone your dribbling and
+          shooting skills.
+        </p>
+        <p>
+          What sets Diddy’s Turf apart is our commitment to flexibility and
+          convenience. We understand that everyone has different schedules and
+          that finding time for sports can be challenging. That’s why we offer a
+          variety of booking slots for each sport, so you can reserve your spot
+          during the time that suits you best. Our reservation system is easy to
+          use and allows for same-day bookings, making it simple to plan a
+          spontaneous match or practice session. Plus, with our premium lighting
+          systems, evening games are as vibrant and clear as daytime sessions,
+          so the action never has to stop when the sun goes down. Our aim is to
+          foster a dynamic sports environment where you can improve your skills,
+          bond with friends, or just blow off steam after a busy day.
+        </p>
+        <p>
+          Beyond just the fields and courts, Diddy’s Turf is a community hub
+          where sports lovers come together. We frequently host events and
+          tournaments that give players of all levels the chance to challenge
+          themselves and enjoy friendly competition. These gatherings are a
+          great opportunity to meet like-minded individuals, make new friends,
+          and celebrate your shared love of sports. Additionally, our
+          professional staff is always available for assistance, whether you
+          need help with equipment, want tips on technique, or require guidance
+          on the rules of the game. At Diddy’s Turf, we’re not just about
+          providing facilities; we’re here to create memorable sports
+          experiences that bring people together in a friendly, supportive
+          atmosphere.
+        </p>
+      </div>
+    </main>
+    <script src="/static/js/modal.js"></script>
+    <script src="/static/js/index.js"></script>
+    <script>
+      // Open the modal and overlay when the trigger button is clicked
+      document.getElementById("trigger").onclick = function () {
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("loginModal").style.display = "block";
+      };
+
+      // Close the modal and overlay when the close button is clicked
+      document.getElementById("closeModal").onclick = function () {
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("loginModal").style.display = "none";
+      };
+
+      // Close the modal and overlay when the overlay itself is clicked
+      document.getElementById("overlay").onclick = function () {
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("loginModal").style.display = "none";
+      };
+
+      document.getElementById("form").addEventListener("submit", pyramid);
+      const vent = document.getElementById("vent");
+
+      function pyramid(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        const user = document.getElementById("user").value; // Get the username
+        const passwd = document.getElementById("passwd").value; // Get the password
+
+        const xhr = new XMLHttpRequest();
+
+        // Determine which button was clicked
+        if (event.submitter.id === "hulu") {
+          // Login button
+          xhr.open("POST", "/login", true);
+          xhr.setRequestHeader("Content-type", "application/json");
+
+          xhr.onload = function () {
+            if (xhr.status == 200) {
+              const response = JSON.parse(this.responseText);
+              vent.textContent = response.message; // Display response from server
+              window.location.href = "/dashboard"; // Redirect to dashboard
+            } else {
+              const response = JSON.parse(this.responseText);
+              vent.textContent = "Error has occurred: " + response.message;
+            }
+          };
+
+          xhr.onerror = function () {
+            vent.textContent = "Error: " + xhr.statusText; // Display error status
+          };
+
+          xhr.send(JSON.stringify({ user: user, passwd: passwd })); // Send login data
+        } else if (event.submitter.id === "gulu") {
+          // Register button
+          xhr.open("POST", "/register", true);
+          xhr.setRequestHeader("Content-type", "application/json");
+
+          xhr.onload = function () {
+            if (xhr.status == 200 || xhr.status == 201) {
+              const response = JSON.parse(this.responseText);
+              vent.textContent = response.message; // Display response from server
+            } else {
+              const response = JSON.parse(this.responseText);
+              vent.textContent = "Error has occurred: " + response.message;
+            }
+          };
+
+          xhr.onerror = function () {
+            vent.textContent = "Error: " + xhr.statusText;
+          };
+
+          xhr.send(JSON.stringify({ user: user, passwd: passwd }));
+        }
+      }
+    </script>
+  </body>
+</html>

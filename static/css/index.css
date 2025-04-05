@@ -1,0 +1,121 @@
+.levi {
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  .levi-text {
+    color: white;
+    font-size: 50px;
+    font-family: "breh";
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    text-align: center;
+    top: 45%;
+  }
+
+  .levi-background {
+    width: 100%;
+    min-height: 600px;
+    filter: brightness(80%);
+    background-image: url(/static/photos/00.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .levi-buttons {
+    margin: 10px;
+    button {
+      border: none;
+      color: white;
+      background-color: rgb(188, 149, 78);
+      padding: 15px 30px;
+      font-family: "breh";
+      font-size: 20px;
+      border-radius: 25px;
+    }
+  }
+}
+
+#aboutus {
+  background-color: rgb(188, 149, 78);
+  color: black;
+  font-family: "breh";
+  font-size: 30px;
+  padding: 40px;
+  h3 {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    color: rgb(77, 68, 50);
+    display: inline-block;
+    background-color: rgb(255, 218, 148);
+    margin-bottom: 20px;
+    font-size: 50px;
+    text-decoration: underline;
+  }
+  p {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    font-size: 40px;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    color: rgb(77, 68, 50);
+    background-color: rgb(255, 218, 148);
+  }
+}
+
+#services{
+  background-color: rgb(233, 185, 96);
+  color: black;
+  font-family: "breh";
+  font-size: 30px;
+  padding: 40px;
+  h3 {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    color: rgb(77, 68, 50);
+    display: inline-block;
+    background-color: rgb(255, 218, 148);
+    margin-bottom: 20px;
+    font-size: 50px;
+    text-decoration: underline;
+  }
+  p {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    font-size: 40px;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    color: rgb(77, 68, 50);
+    background-color: rgb(255, 218, 148);
+  }
+}
+
+
+
+
+.tamodachi{
+  position: relative;
+}
+
+#logout{
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      background-color: rgb(255, 255, 255);
+      padding: 10px 30px;
+      border: none;
+      border-radius: 25px;
+      color:rgb(91, 83, 68);
+      max-width: 100px;
+      font-family: 'breh';
+      font-size: 20px;
+
+ 
+  top: 10px;
+  right: 10px;
+  position: absolute;
+}
+
+#logout:hover{
+  color:rgb(61, 56, 46);
+}
+

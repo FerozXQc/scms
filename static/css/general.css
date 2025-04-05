@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 100vw;
+}
+
+@font-face {
+  font-family: "breh";
+  src: url(/static/fonts/breh.ttf);
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url(/static/fonts/Roboto-Black.ttf);
+}
+
+html {
+  scroll-behavior: smooth;
+}
