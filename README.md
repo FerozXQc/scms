@@ -31,9 +31,9 @@ _Note: The update and delete features are not yet implemented, and there is no a
 
 **Setup Instructions**
 
-    Clone the repository:
+Clone the repository:
 
-git clone https://github.com/yourusername/stadium-complex-management.git
+    git clone https://github.com/yourusername/stadium-complex-management.git
 
 Install dependencies:
 
