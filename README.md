@@ -37,7 +37,7 @@ Clone the repository:
 
 Install dependencies:
 
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 Set up the Database:
 
